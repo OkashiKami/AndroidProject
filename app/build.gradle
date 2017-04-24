@@ -1,0 +1,47 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'sinpai'
+            keyPassword 'toorroot'
+            storeFile file('C:/Users/sinpai/gDrive/sinpaikey.keystore')
+            storePassword 'toorroot'
+        }
+    }
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+    defaultConfig {
+        applicationId "com.sinpaientertainment.kblock"
+        minSdkVersion 16
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        signingConfig signingConfigs.config
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            renderscriptDebuggable true
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile files('libs/backendless.jar')
+    compile 'com.android.support:appcompat-v7:23.0.1'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.google.android.gms:play-services:9.0.0'
+    compile 'com.google.android.gms:play-services-location:9.0.0'
+    compile 'com.google.android.gms:play-services-maps:9.0.0'
+    compile 'com.android.support:design:23.0.1'
+    testCompile 'junit:junit:4.12'
+    compile files('libs/android-query-full.0.25.10.jar')
+}
+

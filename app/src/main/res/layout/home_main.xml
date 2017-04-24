@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/default_Primary">
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/mainDrawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!-- The Main View -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout android:id="@+id/mainToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/main_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:padding="0dp"
+                    android:background="@color/default_Accent"/>
+                <LinearLayout
+                    android:id="@+id/searchview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="#c8000000">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/executeSearch"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/ic_search"
+                            android:padding="14dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/default_TextColor"
+                            android:textColorHint="@color/default_TextHintColor"
+                            android:hint="@string/search_query_hint"
+                            android:id="@+id/searchQuery"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="55dp"
+                            android:layout_marginEnd="55dp"
+                            android:textSize="12sp"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="10dp"
+                        android:background="#96b4b4b4">
+
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
+            <FrameLayout
+                android:id="@+id/home_holder"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/mainToolbar"
+               >
+            </FrameLayout>
+
+        </RelativeLayout>
+
+        <!-- The Main Drawer -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/default_Primary"
+            android:layout_gravity="start">
+            <LinearLayout android:id="@+id/drawer_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="50dp"
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:background="@color/default_Accent" >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <de.hdodenhof.circleimageview.CircleImageView android:id="@+id/profileimage"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:background="@drawable/profile_image_background"
+                            android:src="@drawable/no_image"
+                            android:padding="1dp"
+                            android:layout_margin="5dp"
+                            android:layout_centerVertical="true"/>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_margin="5dp">
+                            <TextView android:id="@+id/drawerUsernameTV"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Username"
+                                android:textColor="@color/default_TextColor"
+                                android:textStyle="bold"
+                                android:textSize="16sp" />
+                            <TextView android:id="@+id/drawerEmailTV"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="status"
+                                android:textColor="@color/default_TextColor"
+                                android:textStyle="italic"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <Button android:id="@+id/cmdSettings1"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/settings"
+                        android:layout_margin="5dp"/>
+                </RelativeLayout>
+                <ListView android:id="@+id/drawer_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            <Button android:id="@+id/drawerLogoutButton"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:text="Logoff"
+                android:textColor="@color/default_TextColor"
+                android:textAllCaps="false" />
+        </RelativeLayout>
+    </android.support.v4.widget.DrawerLayout>
+</RelativeLayout>
